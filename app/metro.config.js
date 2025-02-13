@@ -1,0 +1,15 @@
+// Learn more https://docs.expo.io/guides/customizing-metro
+const { getDefaultConfig } = require('expo/metro-config');
+
+/** @type {import('expo/metro-config').MetroConfig} */
+const config = getDefaultConfig(__dirname, {
+  // Enable CSS support
+  isCSSEnabled: true,
+});
+
+// Disable the worker for web platform
+config.worker = {
+  enabled: false
+};
+
+module.exports = config;
